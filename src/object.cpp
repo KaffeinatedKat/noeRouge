@@ -38,5 +38,12 @@ void objectHandler::tickAll() {
     for (int x = 0; x < this->numberOfObjects; x++) {
         this->allObjects[x]->onTick();
     }
-    return;
+}
+
+void objectHandler::renderAll()
+{
+    for (int x = 0; x < this->numberOfObjects; x++) 
+    {
+        this->allObjects[x]->onRender();
+    }
 }

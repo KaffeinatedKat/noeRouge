@@ -32,7 +32,7 @@ add_compile_options(-Wall)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 file(GLOB_RECURSE SRC ${CMAKE_SOURCE_DIR}/src/*.cpp)
 
-add_executable(${PROJECT_NAME} ${SRC})
+add_executable(${PROJECT_NAME} ${SRC} "src/character.cpp" "include/globals.h" "include/character.h")
 #set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} raylib)
 

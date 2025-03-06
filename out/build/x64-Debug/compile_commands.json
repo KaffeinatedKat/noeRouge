@@ -1,0 +1,26 @@
+[
+{
+  "directory": "C:/Users/yourm/source/repos/noeRouge/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\yourm\\source\\repos\\noeRouge\\include -external:IC:\\vcpkg\\installed\\x64-windows\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd -Wall /FoCMakeFiles\\noeRouge.dir\\src\\character.cpp.obj /FdCMakeFiles\\noeRouge.dir\\ /FS -c C:\\Users\\yourm\\source\\repos\\noeRouge\\src\\character.cpp",
+  "file": "C:\\Users\\yourm\\source\\repos\\noeRouge\\src\\character.cpp",
+  "output": "CMakeFiles\\noeRouge.dir\\src\\character.cpp.obj"
+},
+{
+  "directory": "C:/Users/yourm/source/repos/noeRouge/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\yourm\\source\\repos\\noeRouge\\include -external:IC:\\vcpkg\\installed\\x64-windows\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd -Wall /FoCMakeFiles\\noeRouge.dir\\src\\main.cpp.obj /FdCMakeFiles\\noeRouge.dir\\ /FS -c C:\\Users\\yourm\\source\\repos\\noeRouge\\src\\main.cpp",
+  "file": "C:\\Users\\yourm\\source\\repos\\noeRouge\\src\\main.cpp",
+  "output": "CMakeFiles\\noeRouge.dir\\src\\main.cpp.obj"
+},
+{
+  "directory": "C:/Users/yourm/source/repos/noeRouge/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\yourm\\source\\repos\\noeRouge\\include -external:IC:\\vcpkg\\installed\\x64-windows\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd -Wall /FoCMakeFiles\\noeRouge.dir\\src\\object.cpp.obj /FdCMakeFiles\\noeRouge.dir\\ /FS -c C:\\Users\\yourm\\source\\repos\\noeRouge\\src\\object.cpp",
+  "file": "C:\\Users\\yourm\\source\\repos\\noeRouge\\src\\object.cpp",
+  "output": "CMakeFiles\\noeRouge.dir\\src\\object.cpp.obj"
+},
+{
+  "directory": "C:/Users/yourm/source/repos/noeRouge/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1443~1.348\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Users\\yourm\\source\\repos\\noeRouge\\include -external:IC:\\vcpkg\\installed\\x64-windows\\include -external:W0 /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd -Wall /FoCMakeFiles\\noeRouge.dir\\src\\player.cpp.obj /FdCMakeFiles\\noeRouge.dir\\ /FS -c C:\\Users\\yourm\\source\\repos\\noeRouge\\src\\player.cpp",
+  "file": "C:\\Users\\yourm\\source\\repos\\noeRouge\\src\\player.cpp",
+  "output": "CMakeFiles\\noeRouge.dir\\src\\player.cpp.obj"
+}
+]
