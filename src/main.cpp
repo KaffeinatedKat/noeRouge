@@ -8,6 +8,7 @@
 
 // Local includes
 #include "object.h"
+#include "graphics.cpp"
 
 /*
 // TODO list (class voted it to be here)
@@ -29,8 +30,6 @@ int main() {
     // Create the objectHandler
     class objectHandler objectHandler;
     class gameObject *testObject;
-
-    // Print version info
     std::cout << "noeRouge alpha v0.1\n";
 
     // Test object creation
@@ -53,6 +52,20 @@ int main() {
         }
     }
     */
+
+    // Render test
+    class ScreenHandler screenHandler = ScreenHandler( );
+    CustomCamera mainCamera = CustomCamera( Vector2 { 320.0f, 180.0f }, 4.0f );
+    screenHandler.cameras.push_back( &mainCamera );
+    Texture2D testTexture = LoadTextureFromImage( GenImageColor( 32, 32, MAGENTA ) );
+    Texture2D testTexture2 = LoadTextureFromImage( GenImageColor( 16, 16, GREEN ) );
+    while ( !WindowShouldClose() )
+    {
+       mainCamera.addToBuffer( &Sprite( testTexture, Vector2 {40.0f, 20.0f} ) );
+       mainCamera.addToBuffer( &Sprite( testTexture2, Vector2 { 0.0f, 0.0f } ) );
+       screenHandler.renderAll( );
+    }
+    
 
     return 0;
 }
