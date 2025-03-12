@@ -8,6 +8,7 @@
 
 // Local includes
 #include "object.h"
+#include "graphics.cpp"
 
 /*
 // TODO list (class voted it to be here)
@@ -29,8 +30,6 @@ int main() {
     // Create the objectHandler
     class objectHandler objectHandler;
     class gameObject *testObject;
-
-    // Print version info
     std::cout << "noeRouge alpha v0.1\n";
 
     // Test object creation
@@ -53,6 +52,26 @@ int main() {
         }
     }
     */
+
+    // Render test
+    class ScreenHandler screenHandler = ScreenHandler( );
+    CustomCamera mainCamera = CustomCamera( Vector2 { 320.0f, 180.0f }, 4.0f );
+    screenHandler.cameras.push_back( &mainCamera );
+    Texture2D testTexture = LoadTextureFromImage( GenImageColor( 32, 32, WHITE ) );
+    char* test = ( char* ) "../../../assets/graphics/placeholders/Placeholder player down (1).png";
+    Image testImage = LoadImage( test );
+    ImageFlipVertical( &testImage );
+    Texture2D testTexture2 = LoadTextureFromImage( testImage );
+    UnloadImage( testImage );
+    Sprite sprite1 = Sprite( testTexture, Vector2 { 40.0f, 20.0f }, 1.0f, 30.0f, 2.0f, BLUE );
+    Sprite sprite2 = Sprite( testTexture2, Vector2 { 0.0f, 0.0f }, 0.0f );
+    while ( !WindowShouldClose() )
+    {
+       sprite1.setRotation( sprite1.getRotation( ) + 0.5 );
+       mainCamera.addToBuffer( &sprite1 );
+       mainCamera.addToBuffer( &sprite2 );
+       screenHandler.renderAll( );
+    }
 
     return 0;
 }
