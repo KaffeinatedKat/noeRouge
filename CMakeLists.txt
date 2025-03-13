@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 project(noeRouge)
 
-
 # Generate compile_commands.json
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -32,7 +31,7 @@ add_compile_options(-Wall)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 file(GLOB_RECURSE SRC ${CMAKE_SOURCE_DIR}/src/*.cpp)
 
-add_executable(${PROJECT_NAME} ${SRC} "src/character.cpp" "include/globals.h" "include/character.h")
+add_executable(${PROJECT_NAME} ${SRC} "src/mapGen.cpp")
 #set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} raylib)
 

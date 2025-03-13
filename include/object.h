@@ -1,8 +1,9 @@
-#ifndef H_OBJECT
-#define H_OBJECT
+#pragma once
+
 #include <cstdio>
 #include <vector>
 #include "raylib.h"
+#include "mapGen.h"
 
 /*
 // TODO list:
@@ -11,50 +12,71 @@
 //
 */
 
-class gameObject {
+class GameObject 
+{
 private:
     int id;
+    int speed;
+    Vector2 position;
+    Vector2 size;
+
+    //Checks if this character is colliding with the left side of another rectangle, same for all colliding functions.
+    bool collidingLeft(Rectangle other);
+
+    bool collidingRight(Rectangle other);
+
+    bool collidingTop(Rectangle other);
+
+    bool collidingBottom(Rectangle other);
+
+    void updateCollisions(const std::vector<Rectangle> colliders);
+
+protected:
+    Vector2 direction;
+    Vector2 velocity;
+
+    virtual void updateDirection() {};
 
 public:
-    gameObject() {}
-    gameObject(int id) {
-        this->id = id;
-    }
-    ~gameObject() {
+    GameObject(int _id, Vector2 _position, Vector2 _size, int _speed);
+
+    ~GameObject() 
+    {
         // No memory is currently allocated, do nothing
-        ;;
     }
 
     // Getters
     int getId();
-    // Setters
-    void setId(int id);
 
-    virtual void onTick();
+    Rectangle getBounds();
+
+    Vector2 getVelocity();
+
+    Vector2 getDirection();
+
+    // Setters
+    void setPosition(Vector2 _position);
+
+    virtual void onTick(Floor floor);
     // TODO 00
-    virtual void onRender();
+    virtual void onRender() {};
 };
 
-class objectHandler {
+class ObjectHandler 
+{
 private:
     int numberOfObjects;
     int nextId;
-    std::vector<class gameObject *> allObjects;
+    std::vector<class GameObject *> allObjects;
 
 public:
-    objectHandler() {
-        this->numberOfObjects = 0;
-        this->nextId = 0;
-    }
-    ~objectHandler() {
-        ;;
-    }
+    ObjectHandler();
+    ~ObjectHandler() {};
 
-    void tickAll();
+    void tickAll(class Floor floor);
     void renderAll();
-    class gameObject *getObject(int id);
-    class gameObject *createObject();
-    class player *createPlayer(Vector2 position, Vector2 size, int speed);
+    class GameObject*getObject(int id);
+    class GameObject*createObject(Vector2 position, Vector2 size, int speed);
+    class Player *createPlayer(Vector2 position, Vector2 size, int speed);
+    class NonCombatant* createNPC(Vector2 position, Vector2 size, int speed);
 };
-
-#endif

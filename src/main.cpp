@@ -4,11 +4,11 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
-#include "raylib.h"
+#include <raylib.h>
 
 // Local includes
 #include "object.h"
-#include "globals.h"
+#include "mapGen.h"
 
 /*
 // TODO list (class voted it to be here)
@@ -31,33 +31,62 @@ constexpr int FPS = 60;
 
 constexpr int PLAYER_SPEED = 300;
 
-int main() {
+constexpr Vector2 OBJECT_SIZE = {30, 30};
+
+    //very, very temporary. Goes through map data and as soon is it sees floor, it spawns an object.
+void spawnObjectOnMap(ObjectHandler& handler, Floor& floor, char objectType = 'p')
+{
+    bool objectSpawned = false;
+
+    for (int y = 0; y < HEIGHT; y++)
+    {
+        for (int x = 0; x < WIDTH; x++)
+        {
+            if (floor.data[x][y] == FLOOR && !objectSpawned)
+            {
+                objectSpawned = true;
+
+                switch (objectType)
+                {
+                case 'p':
+                    handler.createPlayer({ (float)x * TILE_SIZE, (float)y * TILE_SIZE }, { 30, 30 }, PLAYER_SPEED);
+                    break;
+                default:
+                    break;
+                }
+
+                break;
+            }
+        }
+    }
+}
+
+int main() 
+{
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "noeRouge alpha v0.1");
     SetTargetFPS(FPS);
 
-        // TODO 00
-    bool isGameRunning = true;
         // Create the objectHandler
-    class objectHandler objectHandler;
-    class gameObject *testObject;
+    class ObjectHandler objectHandler;
+    class GameObject *testObject;
+
+        // Create floor
+    Floor floor = Floor('r');
+    std::vector<Rectangle> collidables = floor.getNearCollidables();
+    spawnObjectOnMap(objectHandler, floor);
 
         // Print version info
     std::cout << "noeRouge alpha v0.1\n";
 
         // Test object creation
-    objectHandler.createObject();
-    testObject = objectHandler.getObject(0);
-    std::cout << testObject->getId() << std::endl;
 
         // Create a player so we can see it tick, and see it on screen
-    objectHandler.createPlayer( { GetScreenWidth() / 2.0f, GetScreenHeight() / 2.0f }, {30, 30}, 300);
-
-    objectHandler.tickAll();
+    objectHandler.createNPC({ 300, 300 }, { 30, 30 }, 200);
 
         // driver code - just for testing before real driver code
     while (!WindowShouldClose())
     {
-        objectHandler.tickAll();
+        objectHandler.tickAll(floor);
 
         BeginDrawing();
 
@@ -65,8 +94,7 @@ int main() {
 
         objectHandler.renderAll();
 
-            // for testing purposes only
-        for (Rectangle rect : globals::GetCollisionRectangles())
+        for (Rectangle rect : floor.getNearCollidables())
         {
             DrawRectangle(rect.x, rect.y, rect.width, rect.height, BLUE);
         }

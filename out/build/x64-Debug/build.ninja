@@ -49,7 +49,7 @@ cmake_ninja_workdir = C$:\Users\yourm\source\repos\noeRouge\out\build\x64-Debug\
 
 build cmake_object_order_depends_target_noeRouge: phony || .
 
-build CMakeFiles\noeRouge.dir\src\character.cpp.obj: CXX_COMPILER__noeRouge_unscanned_Debug C$:\Users\yourm\source\repos\noeRouge\src\character.cpp || cmake_object_order_depends_target_noeRouge
+build CMakeFiles\noeRouge.dir\src\globals.cpp.obj: CXX_COMPILER__noeRouge_unscanned_Debug C$:\Users\yourm\source\repos\noeRouge\src\globals.cpp || cmake_object_order_depends_target_noeRouge
   FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd -Wall
   INCLUDES = -IC:\Users\yourm\source\repos\noeRouge\include -external:IC:\vcpkg\installed\x64-windows\include -external:W0
   OBJECT_DIR = CMakeFiles\noeRouge.dir
@@ -58,6 +58,22 @@ build CMakeFiles\noeRouge.dir\src\character.cpp.obj: CXX_COMPILER__noeRouge_unsc
   TARGET_PDB = noeRouge.pdb
 
 build CMakeFiles\noeRouge.dir\src\main.cpp.obj: CXX_COMPILER__noeRouge_unscanned_Debug C$:\Users\yourm\source\repos\noeRouge\src\main.cpp || cmake_object_order_depends_target_noeRouge
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd -Wall
+  INCLUDES = -IC:\Users\yourm\source\repos\noeRouge\include -external:IC:\vcpkg\installed\x64-windows\include -external:W0
+  OBJECT_DIR = CMakeFiles\noeRouge.dir
+  OBJECT_FILE_DIR = CMakeFiles\noeRouge.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\noeRouge.dir\
+  TARGET_PDB = noeRouge.pdb
+
+build CMakeFiles\noeRouge.dir\src\mapGen.cpp.obj: CXX_COMPILER__noeRouge_unscanned_Debug C$:\Users\yourm\source\repos\noeRouge\src\mapGen.cpp || cmake_object_order_depends_target_noeRouge
+  FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd -Wall
+  INCLUDES = -IC:\Users\yourm\source\repos\noeRouge\include -external:IC:\vcpkg\installed\x64-windows\include -external:W0
+  OBJECT_DIR = CMakeFiles\noeRouge.dir
+  OBJECT_FILE_DIR = CMakeFiles\noeRouge.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\noeRouge.dir\
+  TARGET_PDB = noeRouge.pdb
+
+build CMakeFiles\noeRouge.dir\src\nonCombatant.cpp.obj: CXX_COMPILER__noeRouge_unscanned_Debug C$:\Users\yourm\source\repos\noeRouge\src\nonCombatant.cpp || cmake_object_order_depends_target_noeRouge
   FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd -Wall
   INCLUDES = -IC:\Users\yourm\source\repos\noeRouge\include -external:IC:\vcpkg\installed\x64-windows\include -external:W0
   OBJECT_DIR = CMakeFiles\noeRouge.dir
@@ -89,7 +105,7 @@ build CMakeFiles\noeRouge.dir\src\player.cpp.obj: CXX_COMPILER__noeRouge_unscann
 #############################################
 # Link the executable noeRouge.exe
 
-build noeRouge.exe: CXX_EXECUTABLE_LINKER__noeRouge_Debug CMakeFiles\noeRouge.dir\src\character.cpp.obj CMakeFiles\noeRouge.dir\src\main.cpp.obj CMakeFiles\noeRouge.dir\src\object.cpp.obj CMakeFiles\noeRouge.dir\src\player.cpp.obj | C$:\vcpkg\installed\x64-windows\debug\lib\raylib.lib C$:\vcpkg\installed\x64-windows\debug\lib\raylib.lib
+build noeRouge.exe: CXX_EXECUTABLE_LINKER__noeRouge_Debug CMakeFiles\noeRouge.dir\src\globals.cpp.obj CMakeFiles\noeRouge.dir\src\main.cpp.obj CMakeFiles\noeRouge.dir\src\mapGen.cpp.obj CMakeFiles\noeRouge.dir\src\nonCombatant.cpp.obj CMakeFiles\noeRouge.dir\src\object.cpp.obj CMakeFiles\noeRouge.dir\src\player.cpp.obj | C$:\vcpkg\installed\x64-windows\debug\lib\raylib.lib C$:\vcpkg\installed\x64-windows\debug\lib\raylib.lib
   FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = C:\vcpkg\installed\x64-windows\debug\lib\raylib.lib  C:\vcpkg\installed\x64-windows\debug\lib\raylib.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
@@ -135,7 +151,7 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 # Custom command for CMakeFiles\format
 
 build CMakeFiles\format | ${cmake_ninja_workdir}CMakeFiles\format: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\yourm\source\repos\noeRouge\out\build\x64-Debug && clang-format -i C:/Users/yourm/source/repos/noeRouge/src/character.cpp C:/Users/yourm/source/repos/noeRouge/src/main.cpp C:/Users/yourm/source/repos/noeRouge/src/object.cpp C:/Users/yourm/source/repos/noeRouge/src/player.cpp"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\yourm\source\repos\noeRouge\out\build\x64-Debug && clang-format -i C:/Users/yourm/source/repos/noeRouge/src/globals.cpp C:/Users/yourm/source/repos/noeRouge/src/main.cpp C:/Users/yourm/source/repos/noeRouge/src/mapGen.cpp C:/Users/yourm/source/repos/noeRouge/src/nonCombatant.cpp C:/Users/yourm/source/repos/noeRouge/src/object.cpp C:/Users/yourm/source/repos/noeRouge/src/player.cpp"
 
 # =============================================================================
 # Target aliases.

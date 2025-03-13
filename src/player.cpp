@@ -1,6 +1,6 @@
 #include "player.h"
 
-void player::updateDirection()
+void Player::updateDirection()
 {
     if (IsKeyDown(KEY_A))
     {
@@ -20,8 +20,8 @@ void player::updateDirection()
     }
 }
 
-void player::onRender()
+void Player::onRender()
 {
-    Rectangle rectangle = bounds();
+    Rectangle rectangle = getBounds();
     DrawRectangle(rectangle.x, rectangle.y, rectangle.width, rectangle.height, MAROON);
 }
